@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-    console.log('router post wired')
+    console.log('project post wired')
 })
 
 module.exports = router;
