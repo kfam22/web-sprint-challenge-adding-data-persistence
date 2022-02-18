@@ -10,7 +10,6 @@ router.get('/', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-    console.log('resources post wired')
     Resource.addResource(req.body)
     .then(newResource => {
         res.status(201).json(newResource);

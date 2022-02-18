@@ -12,7 +12,7 @@ const projects = [
   {
     project_name: 'portfolio',
     project_description: 'showcase work',
-    project_completed: false
+    project_completed: true
   },
 ]
 

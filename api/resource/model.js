@@ -1,4 +1,4 @@
-const db = require('../../data/dbConfig')
+const db = require('../../data/dbConfig');
 
 async function getResources() {
     const resources = await db('resources')

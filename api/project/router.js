@@ -4,21 +4,19 @@ const Project = require('./model')
 router.get('/', (req, res, next) => {
     Project.getProjects()
     .then(projects => {
-        res.status(200).json(projects)
+        res.status(200).json(projects);
     })
-    .catch(next)
+    .catch(next);
 })
 
 router.post('/', (req, res, next) => {
-    console.log('project post wired')
+    Project.addProject(req.body)
+    .then(newProject => {
+        res.status(201).json(newProject);
+    })
+    .catch(next);
 })
 
 module.exports = router;
 
-// - [ ] `[GET] /api/projects`
-//   - Even though `project_completed` is stored as an integer, the API uses booleans when interacting with the client
-//   - Example of response body: `[{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}]`
 
-// - [ ] `[POST] /api/projects`
-//   - Even though `project_completed` is stored as an integer, the API uses booleans when interacting with the client
-//   - Example of response body: `{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}`
