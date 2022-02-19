@@ -1,5 +1,5 @@
-const router = require('express').Router()
-const Task = require('./model')
+const router = require('express').Router();
+const Task = require('./model');
 
 router.get('/', (req, res, next) => {
     Task.getTasks()
@@ -10,7 +10,11 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-    console.log('task post wired')
+    Task.addTask(req.body)
+    .then(newTask => {
+        res.status(201).json(newTask);
+    })
+    .catch(next);
 })
 
 module.exports = router;

@@ -15,8 +15,8 @@ server.use('/api/resources', resourceRouter);
 server.use('/api/tasks', taskRouter);
 
 server.use('*', (req, res) => {
-  res.json({ api: 'up '})
-})
+  res.json({ message: 'page not found'});
+});
 
 server.use((err, req, res, next) => { // eslint-disable-line
   res.status(500).json({

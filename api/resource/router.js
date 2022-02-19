@@ -1,5 +1,5 @@
-const router = require('express').Router()
-const Resource = require('./model')
+const router = require('express').Router();
+const Resource = require('./model');
 
 router.get('/', (req, res, next) => {
     Resource.getResources()

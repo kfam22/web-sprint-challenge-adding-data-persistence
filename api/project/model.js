@@ -1,7 +1,6 @@
 const db = require('../../data/dbConfig');
 
 async function getProjects() {
-    // return Promise.resolve(`success! here are the projects`)
     const projects = await db('projects');
     return projects.map(project => ({
         ...project,
@@ -23,12 +22,4 @@ async function getProjects() {
     });
  }
  
- module.exports = { getProjects, addProject}
-
- // - [ ] `[GET] /api/projects`
-//   - Even though `project_completed` is stored as an integer, the API uses booleans when interacting with the client
-//   - Example of response body: `[{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}]`
-
-// - [ ] `[POST] /api/projects`
-//   - Even though `project_completed` is stored as an integer, the API uses booleans when interacting with the client
-//   - Example of response body: `{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}`
+ module.exports = { getProjects, addProject};
